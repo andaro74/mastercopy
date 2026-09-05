@@ -14,6 +14,7 @@ company: Meridian Media Group. Recurring specimen title:
 
 ```
 make install        # deps (uv-managed Python)
+make bootstrap-budget  # $50/mo Budgets alarm + SNS topic. Once, before any deploy.
 make deploy-dev     # CDK deploy, dev stage — requires Budgets alarm (hook-enforced)
 make destroy-dev    # tear down everything with an hourly meter
 make seed           # upload the golden catalog mezzanines
