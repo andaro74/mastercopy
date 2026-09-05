@@ -1,0 +1,39 @@
+{
+  "run_id": "2026-09-04-m00a-fixture",
+  "date": "2026-09-04",
+  "milestone": "m00a",
+  "git_sha": "d46ec63",
+  "ladder_source": "vibes",
+  "titles": [
+    {
+      "title_id": "meridian-sports-regional-final",
+      "content_class": "sports",
+      "renditions": [
+        {
+          "rung": "1080p",
+          "vmaf": 95.4,
+          "bitrate_kbps": 5000,
+          "codec": "avc"
+        },
+        {
+          "rung": "720p",
+          "vmaf": 93.1,
+          "bitrate_kbps": 3000,
+          "codec": "avc"
+        }
+      ],
+      "vmaf_min": 93.1,
+      "delivered_bits_total": 900000000,
+      "mediaconvert_normalized_minutes": 2.5,
+      "usd_actual": 0.0378,
+      "envelope_pass": true
+    }
+  ],
+  "totals": {
+    "titles_pass": 1,
+    "titles_total": 1,
+    "bits_vs_default_pct": 0.0,
+    "usd_vs_default_pct": 0.0
+  },
+  "verdict": "PASS"
+}
