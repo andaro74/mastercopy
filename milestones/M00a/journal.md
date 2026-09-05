@@ -13,7 +13,9 @@
 | CI gate demonstrated to FAIL on a bad verdict | done locally — six bad fixtures in [`tests/fixtures/`](../../tests/fixtures/), asserted red by [`tests/test_verdict_gate.py`](../../tests/test_verdict_gate.py) |
 | CI gate wired as a **required** status check | blocked — needs the branch pushed and branch protection configured on `main` |
 | Hooks active | done — [`.claude/hooks/`](../../.claude/hooks/), wired for both humans (git) and the agent (`PreToolUse`) |
-| Budgets alarm + cost tags live | blocked — [`infra/bootstrap_budget.py`](../../infra/bootstrap_budget.py) is written and dry-runs clean; creating the real budget and activating the `project` cost allocation tag is a human decision |
+| Budgets alarm live | done — `mastercopy-monthly`, $50/month, filtered to `user:project$mastercopy`, alerting at 80% actual and 100% forecasted. The pre-deploy guard went from refusing to passing on the strength of it. |
+| Cost allocation tag active | blocked — activating the `project` tag is a Billing console action with no API, and it takes up to 24h to backfill |
+| SNS alert subscription confirmed | pending — confirmation email sent to the project owner |
 
 ## The four questions
 _(completed at close — see ../TEMPLATE-journal.md)_
@@ -30,3 +32,6 @@ _(completed at close — see ../TEMPLATE-journal.md)_
 - `usd_actual` cannot be sourced until the `project` cost allocation tag is
   activated in Billing, so no verdict in this repo can carry a real dollar
   figure yet. Recorded here so the first one that does has a date attached.
+- The budget was created on 2026-09-04 into a shared account that already had
+  eight unrelated budgets. The guard matches on name, not on limit, so the
+  pre-existing account-wide alarms neither satisfy nor interfere with it.
