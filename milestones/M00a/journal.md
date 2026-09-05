@@ -11,7 +11,8 @@
 | Repo skeleton | done (`d46ec63`) |
 | SPEC-00 finalized and frozen | done — [SPEC-00](../../specs/SPEC-00-verdict-schema.md) is normative, with [`tools/validate_verdict.py`](../../tools/validate_verdict.py) as its implementation |
 | CI gate demonstrated to FAIL on a bad verdict | done locally — six bad fixtures in [`tests/fixtures/`](../../tests/fixtures/), asserted red by [`tests/test_verdict_gate.py`](../../tests/test_verdict_gate.py) |
-| CI gate wired as a **required** status check | blocked — needs the branch pushed and branch protection configured on `main` |
+| CI gate runs on GitHub | done — green on push and on [PR #1](https://github.com/andaro74/mastercopy/pull/1), check name `verdict-schema` |
+| CI gate wired as a **required** status check | blocked — `main` has no branch protection at all yet, despite CLAUDE.md describing it as protected |
 | Hooks active | done — [`.claude/hooks/`](../../.claude/hooks/), wired for both humans (git) and the agent (`PreToolUse`) |
 | Budgets alarm live | done — `mastercopy-monthly`, $50/month, filtered to `user:project$mastercopy`, alerting at 80% actual and 100% forecasted. The pre-deploy guard went from refusing to passing on the strength of it. |
 | Cost allocation tag active | blocked — activating the `project` tag is a Billing console action with no API, and it takes up to 24h to backfill |
